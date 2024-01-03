@@ -12,166 +12,28 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 </head>
-<!--marjo-->
+
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="assets/logo.png" alt="Logo" width="42" height="34" class="d-inline-block align-text-top" />
-          </a>
-        </div>
-      </nav>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nos activités</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tarifs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#form">Formulaire</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Catégorie d'UML
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Water Color Painting</a></li>
-              <hr class="dropdown-divider">
-              <li><a class="dropdown-item" href="#">Paly House & Nursary
+  <section class="img-text-placement">
 
-                </a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Primary Classes</a></li>
-            </ul>
-          </li>
-
-        </ul>
+    <div class="hero-container">
+      <img src="assets/logo.png" alt="">
+    </div>
+    <div class="hero-container-text">
+      <div class="btn-container">
+        <button type="button" class="btn btn-light">Section 1</button>
+        <button type="button" class="btn btn-success">Ready for dev</button>
+      </div>
+      <h1>Envolez-vous</h1>
+      <p>Avec l'Aéro-club de Frotey-Les-Lures</p>
+      <div class="link">
+        <a href="#" class="link-underline-light">En cliquant ici</a>
       </div>
     </div>
-  </nav>
 
-  <article id="center-txt">
-      <h1>Envolez-vous avec AC2FL</h1>
-      <p>L’aéro-club est une Association Loi 1901, agréée Jeunesse et Sports , adhérente à la FFULM ( Fédération Française d’ULM).
-        Association enregistrée n°04674 - - Agrément n° AS70986858 Le siège social demeure 62, Avenue de la République, 70200 Lure</p>
-    </article>
+  </section>
 
-    <section id="galerie">
-      <div class="item">
-        <img src="assets/ulm.png" alt="">
-      </div>
-      <div class="item">
-        <img src="assets/slide-1.jpg" alt="">
-      </div>
-      <div class="item">
-        <img src="assets/slide-2.jpg" alt="">
-      </div>
-      <div class="item">
-        <img src="assets/slide-3.jpg" alt="">
-      </div>
-    </section>
-
-    <div class="container mt-6" id="form">
-      <div class="col-md-6 mx-auto">
-      <form>
-          <div class="form-group">
-              <label>Civilité :</label>
-              <div class="form-check">
-                  <input type="radio" class="form-check-input" id="civiliteM" name="civilite" value="M">
-                  <label class="form-check-label" for="civiliteM">Monsieur</label>
-              </div>
-              <div class="form-check">
-                  <input type="radio" class="form-check-input" id="civiliteMme" name="civilite" value="Mme">
-                  <label class="form-check-label" for="civiliteMme">Madame</label>
-              </div>
-          </div>
-          <div class="form-group">
-              <label for="nom">Nom :</label>
-              <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
-          </div>
-          <div class="form-group">
-              <label for="prenom">Prénom :</label>
-              <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prénom">
-          </div>
-          <div class="form-group">
-              <label for="dateNaissance">Date de naissance :</label>
-              <input type="date" class="form-control" id="dateNaissance">
-          </div>
-          <div class="form-group">
-              <label for="adresse">Adresse :</label>
-              <input type="text" class="form-control" id="adresse" placeholder="Numéro et rue">
-          </div>
-          <div class="form-row">
-              <div class="form-group col-md-4">
-                  <label for="codePostal">Code Postal :</label>
-                  <input type="text" class="form-control" id="codePostal">
-              </div>
-              <div class="form-group col-md-8">
-                  <label for="ville">Ville :</label>
-                  <input type="text" class="form-control" id="ville">
-              </div>
-          </div>
-          <div class="form-group">
-              <label for="situationFamiliale">Situation familiale :</label>
-              <select class="form-control" id="situationFamiliale">
-                  <option>Célibataire</option>
-                  <option>Marié</option>
-                  <option>Union Libre</option>
-                  <option>PACS</option>
-                  <option>Divorcé</option>
-              </select>
-          </div>
-          <div class="form-group">
-              <label for="dateDebutFin">Date de début/fin de situation familiale :</label>
-              <input type="date" class="form-control" id="dateDebutFin">
-          </div>
-          <div class="form-group">
-              <label for="email">Email :</label>
-              <input type="email" class="form-control" id="email" placeholder="Entrez votre adresse email">
-          </div>
-          <div class="form-group">
-              <label for="telephone">Téléphone portable :</label>
-              <input type="tel" class="form-control" id="telephone" placeholder="Entrez votre numéro de téléphone">
-          </div>
-          <div class="form-group">
-              <label for="personnesACharge">Nombre de personnes à charge :</label>
-              <div>
-                  <label>Enfants mineurs :</label>
-                  <input type="number" class="form-control" id="enfantsMineurs" min="0">
-              </div>
-              <div>
-                  <label>Enfants majeurs :</label>
-                  <input type="number" class="form-control" id="enfantsMajeurs" min="0">
-              </div>
-              <div>
-                  <label>Parents à charge (cause du handicap) :</label>
-                  <input type="text" class="form-control" id="parentsCharge">
-              </div>
-          </div>
-          <div class="form-group">
-              <label>Activités susceptibles d'être demandées :</label>
-              <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="coursPilotage" value="coursPilotage">
-                  <label class="form-check-label" for="coursPilotage">Cours de pilotage</label>
-              </div>
-              <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="baptemeAir" value="baptemeAir">
-                  <label class="form-check-label" for="baptemeAir">Baptême de l'air</label>
-              </div>
-  
-          </div>
-    
 </body>
 
 </html>
