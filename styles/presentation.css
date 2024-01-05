@@ -16,50 +16,71 @@ body {
   background: #567cbc;
 }
 .container-1 {
-    padding: 4em;
-    color: #b7cff6;
+  padding: 4em;
+  color: #b7cff6;
 }
 .container-1 h1 {
   font-size: 48px;
 }
 .container-1 p {
-    min-width: 979px;
-    max-width: 1900px;
-    text-align: justify;
+  min-width: 979px;
+  max-width: 1900px;
+  text-align: justify;
 }
-img[alt=mascotte] {
-    width: 20vw;
-    position: absolute;
-    right: 0;
-    top: 10%;
+img[alt="mascotte"] {
+  width: 20vw;
+  position: absolute;
+  right: 0;
+  top: 10%;
 }
 .container-2 {
-    color: #567cbc;
-    background: #C9D9F3;
-    padding: 2em 4em 2em;
+  color: #567cbc;
+  background: #c9d9f3;
+  padding: 2em 4em 2em;
 }
 .container-2 h2 {
-    font-size: 48px;
+  font-size: 48px;
 }
 .equipe-layout {
-    display: flex;
-    padding: 3em 0 1em;
-    justify-content: center;
+  display: flex;
+  padding: 3em 0 1em;
+  justify-content: center;
 }
 .equipe-item {
-    min-height: 400px;
-    min-width: 280px;
-    margin: 0 2em 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  min-height: 400px;
+  min-width: 280px;
+  margin: 0 2em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .equipe-item p {
-    padding: 1.5em 0;
-    text-align: center;
-    color: #567CBC;
+  padding: 1.5em 0;
+  text-align: center;
+  color: #567cbc;
 }
 .img-placeholder {
-    background: red;
-    height: 80%;
+  background: red;
+  height: 80%;
+}
+.container-3 {
+  padding: 4em;
+  color: #b7cff6;
+  height: 250px;
+  background: #567cbc;
+  height: 75vh;
+}
+.container-3 h1 {
+  font-size: 48px;
+}
+.carousel-item {
+  width: 800px;
+}
+footer {
+    background: #c9d9f3;
+    height: 45vh;
+    display: flex;
+    padding: 3em 5em;
+    justify-content: space-around;
+    align-items: center;
 }
