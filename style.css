@@ -27,3 +27,6 @@ img[alt="trail"] {
 #h1-container h1 {
   font-size: 5vw;
 }
+.special-content {
+  display: none;
+}
