@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/redirection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <title>Redirection</title>
+</head>
+<body>
+<div id="message">
+<img src="/assets/logo.png" alt="logo" id="logo">
+<p id="text">Le site sera disponible à partir du 8 janvier 2024.</p>
+</div>
+
+<script>
+var specificDate = new Date('2024-01-05');
+var currentDate = new Date();
+var message = document.getElementById('message');
+if (currentDate < specificDate) {
+    // Message si la date actuelle est avant le 8 janvier
+    document.getElementById('text').innerText = 'Le site sera disponible à partir du 8 janvier 2024.';
+} else {
+    // Redirection si la date actuelle est le 8 janvier ou après
+    window.location.href = 'index.html';
+}
+</script>
+</body>
+</html>
+
