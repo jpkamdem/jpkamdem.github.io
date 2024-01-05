@@ -1,0 +1,28 @@
+body{
+  padding:0px;
+  font-family: 'Hachi Maru Pop', cursive;
+  text-align: center;
+}
+#message {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(35, 58, 105, 0.9), rgba(35, 58, 105, 0.9)),
+      url(/assets/horloge.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 57px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #text{
+    font-size: 4em;
+    text-align: left;
+    color:white;
+  }
+  #logo {
+    width: 38em; /* Ajustez la largeur du logo selon vos besoins */
+    margin-right: 20px; /* Espace entre le logo et le texte */
+}
