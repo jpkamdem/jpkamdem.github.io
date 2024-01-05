@@ -84,3 +84,12 @@ footer {
     justify-content: space-around;
     align-items: center;
 }
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.img-link {
+    width: 50px;
+}
