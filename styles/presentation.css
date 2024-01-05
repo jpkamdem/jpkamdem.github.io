@@ -1,0 +1,49 @@
+a,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  height: 100%;
+  background: #567cbc;
+}
+.container-1 {
+    padding: 4em;
+    color: #b7cff6;
+}
+.container-1 h1 {
+  font-size: 48px;
+}
+.container-1 p {
+    min-width: 979px;;
+}
+.container-2 {
+    color: #567cbc;
+    background: #C9D9F3;
+    padding: 4em;
+}
+.container-2 h2 {
+    font-size: 48px;
+}
+.equipe-layout {
+    display: flex;
+    padding: 1em;
+    justify-content: center;
+}
+.equipe-item {
+    min-height: 400px;
+    min-width: 280px;
+    background: purple;
+    margin: 0 2em 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
