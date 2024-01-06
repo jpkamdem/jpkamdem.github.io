@@ -8,22 +8,222 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="stylesheet" href="/styles/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+      font-family: 'Hachi Maru Pop', cursive;
+      cursor: pointer;
+    }
+    #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    #video-background {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0 0 0 / 71%);
+      z-index: 0;
+    }
+
+    #content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      color: #fff;
+    }
+
+    #airplane {
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+      transform: rotate(0deg); /* Rotation initiale */
+      animation: airplaneAnimation 3s linear forwards;
+    }
+    #chemin{
+    transform: rotate(335deg);
+    height: 17em;
+    position: relative;
+    left: -215px;
+    top:  20px;
+    animation: cheminAnimation 4s linear forwards;
+    opacity:0;
+    }
+    #mot1{
+    margin: 0 auto;
+    position: relative;
+    top: 312px;
+    transform: rotate(335deg);
+    font-size: 5em;
+    right: 1em;
+    animation: cheminAnimation 4s linear forwards;
+    }
+    #mot2{
+    margin: 0 auto;
+    position: relative;
+    top: 183px;
+    transform: rotate(348deg);
+    font-size: 5em;
+    right: -4em;
+    animation: cheminAnimation 4s linear forwards;
+    }
+    #mot21{
+    transform: rotate(333deg);
+    position: relative;
+    top: 203px;
+    right: 1em;
+    animation: cheminAnimation 4s linear forwards;
+    }
+    #mot22{
+    transform: rotate(344deg);
+    position: relative;
+    top: 118px;
+    right: -10em;
+    animation: cheminAnimation 4s linear forwards;
+    }
+    #mot23{
+    transform: rotate(344deg);
+    position: relative;
+    top: 18px;
+    right: -16em;
+    animation: cheminAnimation 4s linear forwards;
+    }
+    #weather-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 20px;
+      background-color: #5c86dd;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+    }
+    #weather-icon {
+      width: 98px;
+      height: 98px;
+    }
+    p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 21px;
+    font-family: 'Hachi Maru Pop', cursive;
+    color: white;
+    }
+    @keyframes airplaneAnimation {
+      0% {
+        bottom: 0%;
+        left: 0%;
+        transform: rotate(30deg);
+      }
+      100% {
+        bottom: 55%;
+        left: 75%;
+        transform: rotate(60deg)
+      }
+    }
+    @keyframes cheminAnimation {
+      0% {
+        opacity:0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @media (min-width: 1200px){
+h3 {
+    font-size: 1.75rem;
+    font-family: 'Hachi Maru Pop', cursive;
+    color: white;
+}
+}
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div id="specialContent" class="special-content">
-  <section id="landing-page">
-    <div id="h1-container">
-      <h1>Envolez-vous</h1>
+  <!-- Conteneur pour la vidéo et l'overlay -->
+  <div id="video-container">
+    <!-- Vidéo en boucle en arrière-plan -->
+    <video autoplay muted loop id="video-background">
+      <source src="assets/avion projet2.mp4" type="video/mp4">
+      Votre navigateur ne prend pas en charge la balise vidéo.
+    </video>
+
+    <!-- Overlay semi-transparent -->
+    <div id="overlay"></div>
+
+    <!-- Avion avec sa trajectoire en grand huit -->
+    <div id="airplane">
+      <img src="assets/logo.png" alt="airplane" width="300" height="300">
     </div>
-    <img src="/assets/trail.png" alt="trail">
-    <div id="h2-container">
-      <h2>Avec l'Aéroclub de Frotey-Les-Lures</h2>
+  </div>
+
+  <!-- Contenu de la page avec Bootstrap Container -->
+  <div id="content" class="container">
+    <div id="specialContent" class="special-content">
+      <section id="landing-page">
+        <div id="h1-container">
+          <h1 id="mot1">Envolez</h1>
+          <h1 id="mot2">-vous</h1>
+        </div>
+        <div id="h2-container">
+          <h2 id="mot21">Avec l'Aéroclub</h2>
+          <h2 id="mot22">de Frotey</h2>
+          <h2 id="mot23">-Les-Lures</h2>
+        </div>
+        <img id="chemin"src="assets/trail.png" alt="chemin pointillée">
+      </section>
     </div>
-  </section>
-</div>
+  </div>
+  <div id="weather-widget">
+    <h3 id="city-name">Loading...</h3>
+    <img id="weather-icon" src="" alt="Weather Icon">
+    <p id="temperature">Loading...</p>
+    <p id="weather-description">Loading...</p>
+  </div>
+
+  <script>
+    const apiKey = '864d129c4f8f41899aea2f5c20f3961c';
+    const city = 'Frotey-lès-Lure'; // Remplacez par le nom de votre ville
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Mettez à jour les éléments HTML avec les données météo
+        document.getElementById('city-name').innerText = data.name;
+        document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+        document.getElementById('temperature').innerText = `${Math.round(data.main.temp)}°C`;
+        document.getElementById('weather-description').innerText = data.weather[0].description;
+      })
+      .catch(error => console.error('Erreur de requête météo :', error));
+  </script>
+  <script>
+    document.addEventListener('click', function () {
+      window.location.href = 'pages/presentation.html';
+    });
+  </script>
 </body>
+
 </html>
