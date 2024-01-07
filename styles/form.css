@@ -1,0 +1,40 @@
+body{
+    background-color:#C9D9F3;
+}
+nav{
+    background-color: white;
+}
+form{
+    background-color:#567CBC;
+    padding: 26px;
+    margin: 12px;
+    border-radius: 24px;
+    color: white;
+}
+p {
+    color: #567CBC;
+}
+#title{
+font-family: 'Hachi Maru Pop', cursive;
+font-size:60px;
+}
+#subtitle{
+font-size:23px;
+}
+.txt{
+    margin-left: 64px;
+    margin-top: 23px;
+    margin-bottom: 41px;
+}
+btn btn-outline-primary{
+    color: #567CBC;
+    border-color: #567CBC;
+}
+.labelimp{
+    font-size: 24px;
+}
+.btn-primary:hover{
+    background-color:#567cbc !important;
+    color: #C9D9F3 !important;
+    border-color: #567cbc !important;
+}
