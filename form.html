@@ -17,7 +17,7 @@
             <nav class="navbar bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img src="../assets/logo.png" alt="Logo" width="42" height="34"
+                        <img src="assets/logo.png" alt="Logo" width="42" height="34"
                             class="d-inline-block align-text-top" />
                     </a>
                 </div>
@@ -146,12 +146,12 @@
         <div class="form-group">
             <label>Activités susceptibles d'être demandées :</label>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="coursPilotage" value="coursPilotage" name="activites[]">
-                <label class="form-check-label" for="coursPilotage">Cours de pilotage</label>
+                <input type="checkbox" class="form-check-input" id="Cours de Pilotage" value="Cours de Pilotage" name="activites[]">
+                <label class="form-check-label" for="Cours de Pilotage">Cours de pilotage</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="baptemeAir" value="baptemeAir" name="activites[]">
-                <label class="form-check-label" for="baptemeAir">Baptême de l'air</label>
+                <input type="checkbox" class="form-check-input" id="Baptême de l'air" value="Baptême de l'air" name="activites[]">
+                <label class="form-check-label" for="Baptême de l'air">Baptême de l'air</label>
             </div>
 
         </div>
@@ -180,32 +180,32 @@ function validerFormulaire() {
     if (nom === '') {
         var nomError = document.getElementById('nomError');
         nomError.textContent = '* Veuillez saisir votre nom';
-        nomError.style.color = "#ff0404";
+        nomError.style.color = "#C9D9F3";
         erreurs = true;
     }
 
     if (prenom === '') {
         var nomError2 = document.getElementById('nomError2');
         nomError2.textContent = '* Veuillez saisir votre prénom';
-        nomError2.style.color = "#ff0404";
+        nomError2.style.color = "#C9D9F3";
         erreurs = true;
     }
 
     if (email === '') {
         var nomError3 = document.getElementById('nomError3');
         nomError3.textContent = '* Veuillez saisir votre email';
-        nomError3.style.color = "#ff0404";
+        nomError3.style.color = "#C9D9F3";
         erreurs = true;
     } else if (!isValidEmail(email)) {
         var nomError3 = document.getElementById('nomError3');
         nomError3.textContent = '* Veuillez saisir une adresse email valide';
-        nomError3.style.color = "#ff0404";
+        nomError3.style.color = "#C9D9F3";
         erreurs = true;
     }
     if (tel === '' && !isValidPhoneNumber(tel)) {
         var nomError4 = document.getElementById('nomError4');
         nomError4.textContent = '* Veuillez saisir un numéro de portable valide (10 chiffres)';
-        nomError4.style.color = "#ff0404";
+        nomError4.style.color = "#C9D9F3";
         erreurs = true;
     }
 
