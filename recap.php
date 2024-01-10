@@ -43,63 +43,129 @@
         </div>
     </nav>
     <div class="txt">
-    <p id="title">Récapitulatif</p>
-    <p id="subtitle">Voici les informations que vous venez de renseignez :</p>
+    <p id="title">Merci de vous être inscrit en tant qu'adhérent !</p>
+    <p id="subtitle">Nous sommes ravis de vous accueillir parmi nous. Voici un récapitulatif de vos informations :</p>
     </div>
 <div class="container mt-6">
     <div class="col-md-6 mx-auto">
     <form>
     <?php
+class Database
+{
+    private $host = "localhost";
+    private $utilisateur = "root";
+    private $mdp = "";
+    private $nomBase = "PILI, ROBERT, KAMDEM, TEMMAR -ACF2L";
+    private $connexion;
+    
+    public function connecter()
+    {
+        $this->connexion = new mysqli($this->host, $this->utilisateur, $this->mdp, $this->nomBase);
 
-class FormulaireHandler {
-    private $data;
-
-    public function __construct($postData) {
-        $this->data = $postData;
-    }
-
-    public function afficherRecap() {
-        echo "<form style='background-color:#567CBC; padding: 26px; margin: 12px; border-radius: 24px; color: white; width: 34em;'>";
-        echo "<p style='color: white' class='labelimp'>Civilité : " . $_POST['civilite'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Nom : " . $_POST['nom'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Prénom : " . $_POST['prenom'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Date de naissance : " . $_POST['datenaissance'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Adresse : " . $_POST['adresse'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Code Postal : " . $_POST['codePostal'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Ville : " . $_POST['ville'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Situation familiale : " . $_POST['situfamiliale'] . "</p>";
-        echo "<p style='color: white' class='labelimp' >Date de début de situation familiale : " . $_POST['datesitufamiliale'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Email : " . $_POST['email'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Téléphone portable : " . $_POST['tel'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Nombre d'enfants mineurs : " . $_POST['enfantsMineurs'] . "</p>";
-        echo "<p  style='color: white'class='labelimp'>Nombre d'enfants majeurs : " . $_POST['enfantsMajeurs'] . "</p>";
-        echo "<p style='color: white' class='labelimp'>Nombre de parents à charge : " . $_POST['parentsCharge'] . "</p>";
-        echo "<p style='color: white'class='labelimp'>Cause du handicap : " . $_POST['causeduhandicap'] . "</p>";
-
-        if (isset($_POST['activites'])) {
-            $activitesChoisies = $_POST['activites'];
-            echo "<p style='color: white'class='labelimp'>Activités choisies : " . implode(', ', $activitesChoisies) . "</p>";
-        } else {
-            echo "<p style='color: white' >Aucune activité choisie.</p>";
+        if ($this->connexion->connect_error) {
+            die("Échec de la connexion à la base de données : " . $this->connexion->connect_error);
         }
+    }
+
+    public function enregistrerAdherent($civilite, $nom, $prenom, $datenaissance, $adresse, $codePostal, $ville, $situfamiliale, $datesitufamiliale, $email, $tel, $enfantsmineurs, $enfantsmajeurs, $parentsCharge, $causeduhandicap, $activitesString)
+    {
+        $requete = $this->connexion->prepare("INSERT INTO `pili,robert,kamdem,temmar - adhérent` (Civilité, Nom, Prénom, Datenaissance, Adresse, Codepostale, Ville, Situationfamiliale, Datedébut, Email, Telephone, Nbchargesenfantsmin, Nbchargesenfantsmaj, Nbchargesparents, Causehandicap, Activitésdemandées) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        if ($requete === false) {
+            die("Erreur préparation de la requête : " . $this->connexion->error);
+        }
+        
+        $requete->bind_param("ssssssssssssssss", $civilite, $nom, $prenom, $datenaissance, $adresse, $codePostal, $ville, $situfamiliale, $datesitufamiliale, $email, $tel, $enfantsmineurs, $enfantsmajeurs, $parentsCharge, $causeduhandicap, $activitesString);
+        
+        if (!$requete->execute()) {
+            $erreur = $this->connexion->error;
+            $erreurInfo = $requete->errorInfo(); // Ajout de cette ligne pour obtenir des informations détaillées
+            die("Erreur lors de l'exécution de la requête : " . $erreur . " | " . implode(", ", $erreurInfo));
+        }        
+        
+        $requete->close();
+    }
+
+    public function deconnecter()
+    {
+        $this->connexion->close();
+    }
+    public function afficherRecap() {
+        $civilite = $_POST["civilite"];
+        $nom = $_POST["nom"];
+        $prenom = $_POST["prenom"];
+        $datenaissance = $_POST['datenaissance'];
+        $adresse = $_POST['adresse'];
+        $codePostal = $_POST['codePostal'];
+        $ville = $_POST['ville'];
+        $situfamiliale = $_POST['situfamiliale'];
+        $datesitufamiliale = $_POST['datesitufamiliale'];
+        $email = $_POST['email'];
+        $tel = $_POST['tel'];
+        $enfantsmineurs = $_POST['enfantsMineurs'];
+        $enfantsmajeurs = $_POST['enfantsMajeurs'];
+        $parentsCharge = $_POST['parentsCharge'];
+        $causeduhandicap = $_POST['causeduhandicap'];
+        $activitesArray = $_POST['activites'];
+        $activitesString = implode(", ", $activitesArray);
+
+        echo "<form style='background-color:#567CBC; padding: 26px; margin: 12px; border-radius: 24px; color: white; width: 34em;'>";
+        echo "<p style='color: white' class='labelimp'>Civilité : " . $civilite . "</p>";
+        echo "<p style='color: white' class='labelimp'>Nom : " . $nom. "</p>";
+        echo "<p style='color: white' class='labelimp'>Prénom : " . $prenom. "</p>";
+        echo "<p style='color: white' class='labelimp'>Date de naissance : " . $datenaissance. "</p>";
+        echo "<p style='color: white' class='labelimp'>Adresse : " . $adresse. "</p>";
+        echo "<p style='color: white' class='labelimp'>Code Postal : " . $codePostal . "</p>";
+        echo "<p style='color: white' class='labelimp'>Ville : " . $ville. "</p>";
+        echo "<p style='color: white' class='labelimp'>Situation familiale : " . $situfamiliale . "</p>";
+        echo "<p style='color: white' class='labelimp' >Date de début de situation familiale : " . $datesitufamiliale . "</p>";
+        echo "<p style='color: white' class='labelimp'>Email : " . $email. "</p>";
+        echo "<p style='color: white' class='labelimp'>Téléphone portable : " . $tel. "</p>";
+        echo "<p style='color: white' class='labelimp'>Nombre d'enfants mineurs : " . $enfantsmineurs. "</p>";
+        echo "<p  style='color: white'class='labelimp'>Nombre d'enfants majeurs : " . $enfantsmajeurs. "</p>";
+        echo "<p style='color: white' class='labelimp'>Nombre de parents à charge : " . $parentsCharge. "</p>";
+        echo "<p style='color: white'class='labelimp'>Cause du handicap : " . $causeduhandicap. "</p>";
+        echo "<p style='color: white'class='labelimp'>Activités demandées: " . $activitesString. "</p>";
         echo "</form>";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Créer une instance du gestionnaire de formulaire avec les données postées
+            $handler = new FormulaireHandler($_POST);
+        
+            // Afficher le récapitulatif
+            $handler->afficherRecap();
+        } else {
+            // Rediriger vers le formulaire si le formulaire n'a pas été soumis
+            header("Location: form.html");
+            exit();
+        }
     }
 }
 
-// Vérifier si le formulaire a été soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Créer une instance du gestionnaire de formulaire avec les données postées
-    $handler = new FormulaireHandler($_POST);
+$civilite = $_POST["civilite"];
+$nom = $_POST["nom"];
+$prenom = $_POST["prenom"];
+$datenaissance = $_POST['datenaissance'];
+$adresse = $_POST['adresse'];
+$codePostal = $_POST['codePostal'];
+$ville = $_POST['ville'];
+$situfamiliale = $_POST['situfamiliale'];
+$datesitufamiliale = $_POST['datesitufamiliale'];
+$email = $_POST['email'];
+$tel = $_POST['tel'];
+$enfantsmineurs = $_POST['enfantsMineurs'];
+$enfantsmajeurs = $_POST['enfantsMajeurs'];
+$parentsCharge = $_POST['parentsCharge'];
+$causeduhandicap = $_POST['causeduhandicap'];
+$activitesArray = $_POST['activites'];
+$activitesString = implode(", ", $activitesArray);
 
-    // Afficher le récapitulatif
-    $handler->afficherRecap();
-} else {
-    // Rediriger vers le formulaire si le formulaire n'a pas été soumis
-    header("Location: form.html");
-    exit();
-}
+$baseDeDonnees = new Database();
+$baseDeDonnees->connecter();
+$baseDeDonnees->enregistrerAdherent($civilite, $nom, $prenom, $datenaissance, $adresse, $codePostal, $ville, $situfamiliale, $datesitufamiliale, $email, $tel, $enfantsmineurs, $enfantsmajeurs, $parentsCharge, $causeduhandicap, $activitesString);
+$baseDeDonnees->afficherRecap();
+$baseDeDonnees->deconnecter();
 ?>
-
 
     </form>
 </div>
