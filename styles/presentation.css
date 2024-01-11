@@ -2,6 +2,17 @@
   height: 100%;
   background: #567cbc;
 }
+#cookie-btn {
+  position: fixed;
+  right: 4%;
+  bottom: 4%;
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+}
+a#open_preferences_center img {
+  height: 90%;
+}
 nav {
   font-family: "B612", sans-serif;
   font-size: 11px;
@@ -11,7 +22,7 @@ nav {
   color: #b7cff6;
 }
 .container-1 h1 {
-  font-family: 'Hachi Maru Pop', cursive;
+  font-family: "Hachi Maru Pop", cursive;
   font-size: 48px;
 }
 .container-1 p {
