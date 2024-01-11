@@ -12,14 +12,16 @@
 }
 #prompt {
   color: #b7cff6;
+  font-family: "B612", sans-serif;
+  font-size: 1.5em;
 }
 table {
   margin: 3em 0;
+  font-family: "B612", sans-serif;
 }
 .table-striped {
   text-align: center;
 }
-
 
 /* test */
 .test {
@@ -31,5 +33,5 @@ table {
 }
 .logo-container img {
   width: 45px;
-  padding: .8em .5em;
+  padding: 0.8em 0.5em;
 }

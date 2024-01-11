@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +12,17 @@
     <title>Formulaire pour les adhérents</title>
 
 </head>
+
 <body>
+
+    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"
+        charset="UTF-8"></script>
+    <script type="text/javascript" charset="UTF-8">
+        document.addEventListener('DOMContentLoaded', function () {
+            cookieconsent.run({ "notice_banner_type": "standalone", "consent_type": "express", "palette": "light", "language": "fr", "page_load_consent_levels": ["strictly-necessary"], "notice_banner_reject_button_hide": false, "preferences_center_close_button_hide": false, "page_refresh_confirmation_buttons": false, "website_name": "AC2FL" });
+        });
+    </script>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <nav class="navbar bg-body-tertiary">
@@ -29,13 +40,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Qui sommes-nous</a>
+                        <a href="site.html" class="nav-link">Qui sommes-nous</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nos activités</a>
+                        <a class="nav-link" href="site.html">Nos activités</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tarifs</a>
+                        <a class="nav-link" href="site.html">Tarifs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="form.html" class="nav-link">Formulaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" id="open_preferences_center" class="nav-link">Cookies</a>
+                        <!-- Update cookies preferences -->
                     </li>
 
                 </ul>
@@ -43,193 +61,203 @@
         </div>
     </nav>
     <div class="txt">
-    <p id="title">Formulaire</p>
-    <p id="subtitle">Veuillez remplir ce formulaire pour votre inscription en tant qu’adhérent:</p>
+        <p id="title">Formulaire</p>
+        <p id="subtitle">Veuillez remplir ce formulaire pour votre inscription en tant qu’adhérent:</p>
     </div>
-<div class="container mt-6">
-    <div class="col-md-6 mx-auto">
-    <form method="post">
-        <div class="form-group" style="display: flex;justify-content: space-between;align-items: baseline;">
-            <label class="labelimp">Civilité :</label>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" id="civiliteM" name="civilite" value="M">
-                <label class="form-check-label" for="civiliteM">Monsieur</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" id="civiliteMme" name="civilite" value="Mme">
-                <label class="form-check-label" for="civiliteMme">Madame</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" id="civilitenonspecifique" name="civilite" value="NonSpé">
-                <label class="form-check-label" for="civilitenonspecifique">Non spécifique</label>
-            </div>
-        </div>
-        <div style="display:flex;justify-content: space-between;">
-            <div class="form-group">
-                <label class="labelimp" for="nom">Nom *:</label>
-                <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom">
-                <div id="nomError" class="error-message"></div>
-            </div>
-            <div class="form-group">
-                <label class="labelimp" for="prenom">Prénom *:</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez votre prénom">
-                <div id="nomError2" class="error-message"></div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="labelimp" for="dateNaissance">Date de naissance :</label>
-            <input type="date" class="form-control" name="datenaissance" id="dateNaissance">
-        </div>
-        <div class="form-group">
-            <label class="labelimp"for="adresse">Adresse :</label>
-            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Numéro et rue">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="codePostal">Code Postal :</label>
-                <input type="text" class="form-control" id="codePostal" name="codePostal" list="codesPostauxList">
-                <!-- Liste déroulante avec les codes postaux pré-remplis -->
-                <datalist id="codesPostauxList"></datalist>
-            </div>
-            <div class="form-group col-md-8">
-                <label for="ville">Ville :</label>
-                <input type="text" class="form-control" id="ville" name="ville">
-            </div>
-        </div>
-            <div class="form-group">
-                <label class="labelimp" for="situationFamiliale">Situation familiale :</label>
-                <select class="form-control" name="situfamiliale" id="situationFamiliale">
-                    <option>Célibataire</option>
-                    <option>Marié</option>
-                    <option>Union Libre</option>
-                    <option>PACS</option>
-                    <option>Divorcé</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="dateDebutFin">Date de début de situation familiale :</label>
-                <input type="date" name="datesitufamiliale"class="form-control" id="dateDebutFin">
-            </div>
-        <div style="display:flex;justify-content: space-between;">
-            <div class="form-group">
-                <label class="labelimp" for="email">Email *:</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Entrez votre adresse email">
-                <div id="nomError3" class="error-message"></div>
-            </div>
-            <div class="form-group">
-                <label class="labelimp" for="telephone">Téléphone portable :</label>
-                <input type="tel"  name="tel"class="form-control" id="telephone" placeholder="Entrez votre numéro de téléphone">
-                <div id="nomError4" class="error-message"></div>
-            </div>
-        </div>
-            <div class="form-group">
-                <label class="labelimp" for="personnesACharge">Nombre de personnes à charge :</label>
+    <div class="container mt-6">
+        <div class="col-md-6 mx-auto">
+            <form method="post">
+                <div class="form-group" style="display: flex;justify-content: space-between;align-items: baseline;">
+                    <label class="labelimp">Civilité :</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="civiliteM" name="civilite" value="M">
+                        <label class="form-check-label" for="civiliteM">Monsieur</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="civiliteMme" name="civilite" value="Mme">
+                        <label class="form-check-label" for="civiliteMme">Madame</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="civilitenonspecifique" name="civilite"
+                            value="NonSpé">
+                        <label class="form-check-label" for="civilitenonspecifique">Non spécifique</label>
+                    </div>
+                </div>
                 <div style="display:flex;justify-content: space-between;">
-                    <div style="margin-right: 18px;">
-                        <label>Enfants mineurs :</label>
-                        <input type="number" class="form-control" id="enfantsMineurs" name="enfantsMineurs"min="0">
+                    <div class="form-group">
+                        <label class="labelimp" for="nom">Nom *:</label>
+                        <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom">
+                        <div id="nomError" class="error-message"></div>
                     </div>
-                    <div style="margin-right: 18px;">
-                        <label>Enfants majeurs :</label>
-                        <input type="number" class="form-control" id="enfantsMajeurs" name="enfantsMajeurs"min="0">
+                    <div class="form-group">
+                        <label class="labelimp" for="prenom">Prénom *:</label>
+                        <input type="text" class="form-control" id="prenom" name="prenom"
+                            placeholder="Entrez votre prénom">
+                        <div id="nomError2" class="error-message"></div>
                     </div>
-                    <div style="margin-right: 18px;">
-                        <label>Parents à charge</label>
-                        <input type="number" class="form-control" id="parentsCharge" name="parentsCharge" min="0">
+                </div>
+                <div class="form-group">
+                    <label class="labelimp" for="dateNaissance">Date de naissance :</label>
+                    <input type="date" class="form-control" name="datenaissance" id="dateNaissance">
+                </div>
+                <div class="form-group">
+                    <label class="labelimp" for="adresse">Adresse :</label>
+                    <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Numéro et rue">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="codePostal">Code Postal :</label>
+                        <input type="text" class="form-control" id="codePostal" name="codePostal"
+                            list="codesPostauxList">
+                        <!-- Liste déroulante avec les codes postaux pré-remplis -->
+                        <datalist id="codesPostauxList"></datalist>
                     </div>
-            </div>
-            <div>
-                <label class="labelimp" >Cause du handicap</label>
-                <textarea  class="form-control" id="causeduhandicap" name="causeduhandicap"style="height:200px"></textarea>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Activités susceptibles d'être demandées :</label>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="Cours de Pilotage" value="Cours de Pilotage" name="activites[]">
-                <label class="form-check-label" for="Cours de Pilotage">Cours de pilotage</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="Baptême de l'air" value="Baptême de l'air" name="activites[]">
-                <label class="form-check-label" for="Baptême de l'air">Baptême de l'air</label>
-            </div>
+                    <div class="form-group col-md-8">
+                        <label for="ville">Ville :</label>
+                        <input type="text" class="form-control" id="ville" name="ville">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="labelimp" for="situationFamiliale">Situation familiale :</label>
+                    <select class="form-control" name="situfamiliale" id="situationFamiliale">
+                        <option>Célibataire</option>
+                        <option>Marié</option>
+                        <option>Union Libre</option>
+                        <option>PACS</option>
+                        <option>Divorcé</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dateDebutFin">Date de début de situation familiale :</label>
+                    <input type="date" name="datesitufamiliale" class="form-control" id="dateDebutFin">
+                </div>
+                <div style="display:flex;justify-content: space-between;">
+                    <div class="form-group">
+                        <label class="labelimp" for="email">Email *:</label>
+                        <input type="email" name="email" class="form-control" id="email"
+                            placeholder="Entrez votre adresse email">
+                        <div id="nomError3" class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="labelimp" for="telephone">Téléphone portable :</label>
+                        <input type="tel" name="tel" class="form-control" id="telephone"
+                            placeholder="Entrez votre numéro de téléphone">
+                        <div id="nomError4" class="error-message"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="labelimp" for="personnesACharge">Nombre de personnes à charge :</label>
+                    <div style="display:flex;justify-content: space-between;">
+                        <div style="margin-right: 18px;">
+                            <label>Enfants mineurs :</label>
+                            <input type="number" class="form-control" id="enfantsMineurs" name="enfantsMineurs" min="0">
+                        </div>
+                        <div style="margin-right: 18px;">
+                            <label>Enfants majeurs :</label>
+                            <input type="number" class="form-control" id="enfantsMajeurs" name="enfantsMajeurs" min="0">
+                        </div>
+                        <div style="margin-right: 18px;">
+                            <label>Parents à charge</label>
+                            <input type="number" class="form-control" id="parentsCharge" name="parentsCharge" min="0">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="labelimp">Cause du handicap</label>
+                        <textarea class="form-control" id="causeduhandicap" name="causeduhandicap"
+                            style="height:200px"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Activités susceptibles d'être demandées :</label>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="Cours de Pilotage" value="Cours de Pilotage"
+                            name="activites[]">
+                        <label class="form-check-label" for="Cours de Pilotage">Cours de pilotage</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="Baptême de l'air" value="Baptême de l'air"
+                            name="activites[]">
+                        <label class="form-check-label" for="Baptême de l'air">Baptême de l'air</label>
+                    </div>
 
+                </div>
+                <button type="button" onclick="validerFormulaire()" class="btn btn-primary"
+                    style="background-color:#C9D9F3;color: #567cbc;border-color: #C9D9F3;">Soumettre</button>
+            </form>
         </div>
-        <button type="button" onclick="validerFormulaire()" class="btn btn-primary" style="background-color:#C9D9F3;color: #567cbc;border-color: #C9D9F3;">Soumettre</button>
-    </form>
-</div>
-</div>
+    </div>
 </body>
 <script>
-function validerFormulaire() {
-    // Récupération des valeurs
-    var nom = document.getElementById('nom').value;
-    var prenom = document.getElementById('prenom').value;
-    var email = document.getElementById('email').value;
-    var tel = document.getElementById('telephone').value;
-    var activites = document.querySelectorAll('input[name="activites[]"]:checked');
+    function validerFormulaire() {
+        // Récupération des valeurs
+        var nom = document.getElementById('nom').value;
+        var prenom = document.getElementById('prenom').value;
+        var email = document.getElementById('email').value;
+        var tel = document.getElementById('telephone').value;
+        var activites = document.querySelectorAll('input[name="activites[]"]:checked');
 
-    // Réinitialisation des erreurs
-    document.querySelectorAll('.error-message').forEach(function (element) {
-        element.textContent = '';
-    });
+        // Réinitialisation des erreurs
+        document.querySelectorAll('.error-message').forEach(function (element) {
+            element.textContent = '';
+        });
 
-    // Vérifications
-    var erreurs = false;
+        // Vérifications
+        var erreurs = false;
 
-    if (nom === '') {
-        var nomError = document.getElementById('nomError');
-        nomError.textContent = '* Veuillez saisir votre nom';
-        nomError.style.color = "#C9D9F3";
-        erreurs = true;
+        if (nom === '') {
+            var nomError = document.getElementById('nomError');
+            nomError.textContent = '* Veuillez saisir votre nom';
+            nomError.style.color = "#C9D9F3";
+            erreurs = true;
+        }
+
+        if (prenom === '') {
+            var nomError2 = document.getElementById('nomError2');
+            nomError2.textContent = '* Veuillez saisir votre prénom';
+            nomError2.style.color = "#C9D9F3";
+            erreurs = true;
+        }
+
+        if (email === '') {
+            var nomError3 = document.getElementById('nomError3');
+            nomError3.textContent = '* Veuillez saisir votre email';
+            nomError3.style.color = "#C9D9F3";
+            erreurs = true;
+        } else if (!isValidEmail(email)) {
+            var nomError3 = document.getElementById('nomError3');
+            nomError3.textContent = '* Veuillez saisir une adresse email valide';
+            nomError3.style.color = "#C9D9F3";
+            erreurs = true;
+        }
+        if (tel === '' && !isValidPhoneNumber(tel)) {
+            var nomError4 = document.getElementById('nomError4');
+            nomError4.textContent = '* Veuillez saisir un numéro de portable valide (10 chiffres)';
+            nomError4.style.color = "#C9D9F3";
+            erreurs = true;
+        }
+
+        if (activites.length === 0) {
+            document.getElementById('activitesError').textContent = '* Veuillez sélectionner au moins une activité';
+            erreurs = true;
+        }
+
+        if (!erreurs) {
+            document.querySelector('form').action = 'recap.php'; // Changer l'action du formulaire
+            document.querySelector('form').submit();
+        }
     }
 
-    if (prenom === '') {
-        var nomError2 = document.getElementById('nomError2');
-        nomError2.textContent = '* Veuillez saisir votre prénom';
-        nomError2.style.color = "#C9D9F3";
-        erreurs = true;
+    function isValidEmail(email) {
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
     }
 
-    if (email === '') {
-        var nomError3 = document.getElementById('nomError3');
-        nomError3.textContent = '* Veuillez saisir votre email';
-        nomError3.style.color = "#C9D9F3";
-        erreurs = true;
-    } else if (!isValidEmail(email)) {
-        var nomError3 = document.getElementById('nomError3');
-        nomError3.textContent = '* Veuillez saisir une adresse email valide';
-        nomError3.style.color = "#C9D9F3";
-        erreurs = true;
+    function isValidPhoneNumber(tel) {
+        var regex = /^[0-9]{10}$/;
+        return regex.test(tel);
     }
-    if (tel === '' && !isValidPhoneNumber(tel)) {
-        var nomError4 = document.getElementById('nomError4');
-        nomError4.textContent = '* Veuillez saisir un numéro de portable valide (10 chiffres)';
-        nomError4.style.color = "#C9D9F3";
-        erreurs = true;
-    }
-
-    if (activites.length === 0) {
-        document.getElementById('activitesError').textContent = '* Veuillez sélectionner au moins une activité';
-        erreurs = true;
-    }
-
-    if (!erreurs) {
-        document.querySelector('form').action = 'recap.php'; // Changer l'action du formulaire
-        document.querySelector('form').submit();
-    }
-}
-
-function isValidEmail(email) {
-    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
-
-function isValidPhoneNumber(tel) {
-    var regex = /^[0-9]{10}$/;
-    return regex.test(tel);
-}
 
 
 </script>
+
 </html>

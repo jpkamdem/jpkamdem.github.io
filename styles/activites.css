@@ -12,7 +12,8 @@ main {
   font-size: 4em;
 }
 .intro-container p {
-  font-size: 2.3em;
+  font-family: "B612", sans-serif;
+  font-size: 1.2em;
   line-height: 1.2em;
   width: 80vw;
   min-width: 1384px;
@@ -36,76 +37,80 @@ main {
   color: #c9d9f3;
 }
 .item-placement {
-    width: 45em;
+  width: 45em;
 }
 .item-placement > img {
   height: 10em;
 }
 .item-placement > h2 {
-    font-size: 3em;
-    text-align: start;
+  font-size: 3em;
+  text-align: start;
 }
 ul {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 li {
-    font-size: 1.7em;
+  font-family: "B612", sans-serif;
+  font-size: 1.7em;
 }
 .card-container {
-    display: flex;
-    flex-direction: column;
-    background: #c9d9f3;
-    height: 40em;
-    padding: 2em;
+  display: flex;
+  flex-direction: column;
+  background: #c9d9f3;
+  height: 40em;
+  padding: 2em;
 }
 .card-container > h1 {
-    color: #567cbc;
-    font-size: 3em;
+  color: #567cbc;
+  font-size: 3em;
 }
 .card-layout {
-    margin: 3em auto;
-    height: 30em;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  margin: 3em auto;
+  height: 30em;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 .ulm-cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background: #567cbc;
-    border-radius: 10px;
-    width: 15%;
-    min-width: 270px;
-    height: 90%;
-    padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: #567cbc;
+  border-radius: 10px;
+  width: 15%;
+  min-width: 270px;
+  height: 90%;
+  padding: 1.5em;
 }
 .ulm-cards > img {
-    width: 70%;
-/*     min-width: 195px;
- */    border-radius: 10px;
+  width: 70%;
+  /*     min-width: 195px;
+ */
+  border-radius: 10px;
 }
 img#bis {
-    width: 150px;
+  width: 150px;
 }
 .ulm-cards h3 {
-    color: #C9D9F3;
-    font-size: 1.8em;
+  color: #c9d9f3;
+  font-size: 1.8em;
 }
 .ulm-cards p {
-    color: #C9D9F3;
-    text-align: justify;
-    width: 90%;
+  font-family: "B612", sans-serif;
+  color: #c9d9f3;
+  text-align: justify;
+  width: 90%;
+  font-size: .8em;
 }
 .cards-price {
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .cards-price p {
-    font-size: 1.4em;
+  font-size: 1.4em;
 }

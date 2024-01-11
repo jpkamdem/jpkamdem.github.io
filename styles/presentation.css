@@ -2,18 +2,26 @@
   height: 100%;
   background: #567cbc;
 }
+nav {
+  font-family: "B612", sans-serif;
+  font-size: 11px;
+}
 .container-1 {
   padding: 6em 4em 4em;
   color: #b7cff6;
 }
 .container-1 h1 {
+  font-family: 'Hachi Maru Pop', cursive;
   font-size: 48px;
 }
 .container-1 p {
+  font-family: "B612", sans-serif;
+  font-size: 1.2em;
+
   min-width: 979px;
   max-width: 1900px;
   text-align: justify;
-  color:#c9d9f3;
+  color: #c9d9f3;
 }
 img[alt="mascotte"] {
   width: 17vw;
@@ -43,6 +51,7 @@ img[alt="mascotte"] {
   justify-content: center;
 }
 .equipe-item p {
+  font-family: "B612", sans-serif;
   padding: 1em 0;
   text-align: center;
   color: #092e6e;
