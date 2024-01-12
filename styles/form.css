@@ -39,14 +39,3 @@ btn btn-outline-primary{
     color: #C9D9F3 !important;
     border-color: #567cbc !important;
 }
-#cookie-btn {
-    position: fixed;
-    right: 4%;
-    bottom: 4%;
-    border-radius: 50%;
-    height: 90px;
-    width: 90px;
-  }
-  a#open_preferences_center img {
-    height: 90%;
-  }
