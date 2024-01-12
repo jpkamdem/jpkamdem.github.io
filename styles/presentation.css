@@ -1,5 +1,5 @@
 .main-content {
-  height: 100%;
+  height: 136%;
   background: #567cbc;
 }
 #cookie-btn {
@@ -9,6 +9,17 @@
   border-radius: 50%;
   height: 90px;
   width: 90px;
+  z-index:1;
+}
+
+#gros-titre {
+  padding-left: 0em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+#gros-titre h1 {
+  font-size: 4em;
+  color: #b7cff6;
 }
 a#open_preferences_center img {
   height: 90%;
@@ -18,27 +29,30 @@ nav {
   font-size: 11px;
 }
 .container-1 {
-  padding: 0 4em 4em;
+  padding: 6em 4em 1em;
   color: #b7cff6;
 }
 .container-1 h1 {
   font-family: "Hachi Maru Pop", cursive;
   font-size: 48px;
+  color: #c9d9f3;
+  padding-bottom: 21px;
 }
 .container-1 p {
   font-family: "B612", sans-serif;
   font-size: 1.2em;
-
   min-width: 979px;
   max-width: 1900px;
   text-align: justify;
   color: #c9d9f3;
+  width: 59em;
+  text-align: justify;
 }
 img[alt="mascotte"] {
-  width: 17vw;
+  width: 20vw;
   position: absolute;
-  right: 0;
-  top: 10%;
+  right: 7px;
+  top: 13%
 }
 .container-2 {
   color: #567cbc;
@@ -46,11 +60,12 @@ img[alt="mascotte"] {
   padding: 2em 4em 2em;
 }
 .container-2 h2 {
+  font-family: "Hachi Maru Pop", cursive;
   font-size: 48px;
+  padding-bottom: 21px;
 }
 .equipe-layout {
   display: flex;
-  padding: 3em 0 1em;
   justify-content: center;
 }
 .equipe-item {
@@ -65,7 +80,9 @@ img[alt="mascotte"] {
   font-family: "B612", sans-serif;
   padding: 1em 0;
   text-align: center;
-  color: #092e6e;
+  color: #c9d9f3;
+  background-color: #567cbc;
+  border-radius: 17px;
 }
 .img-placeholder {
   background: red;
@@ -73,31 +90,14 @@ img[alt="mascotte"] {
 }
 .container-3 {
   padding: 2em;
-  height: 30%;
   color: #b7cff6;
+  height: 250px;
+  background: #567cbc;
 }
-.container-3 p {
-  color: #b7cff6;
-}
-
-.photos {
-  display: flex;
-  justify-content: space-around;
-  height: 100%;
-  width: 100%;
-}
-.photo-item {
-  height: 240px;
-  width: 240px;
-  margin: 0 2em 0;
-  padding: 0 0 2em;
-}
-.photo-item img {
-  height: 100%;
-  border-radius: 10px;
-}
-/* .container-3 h1 {
+.container-3 h1 {
+  font-family: "Hachi Maru Pop", cursive;
   font-size: 48px;
+  padding-bottom: 21px;
 }
 .carousel-item {
   width: 200px;
@@ -106,4 +106,3 @@ img[alt="mascotte"] {
   display: flex;
   justify-content: space-around;
 }
- */

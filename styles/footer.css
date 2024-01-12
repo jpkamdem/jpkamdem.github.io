@@ -2,18 +2,24 @@ footer {
   background: #c9d9f3;
   position: relative;
   bottom: 0;
-  height: 30%;
+  height: auto;
   display: flex;
   justify-content: space-around;
   width: 100%;
   font-family: "B612", sans-serif;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-style: solid;
+  border-top-color: #567cbc;
+  border-right: white;
+  border-left: white;
 }
 .foot-item {
-  height: 320px;
+  height: auto;
   width: 800px;
   padding: 1.3em;
 }
-.foot-item h3 {
+.foot-item h3 h2 h1 {
   color: #567cbc;
 }
 .info-list {
@@ -24,9 +30,35 @@ footer {
 }
 .info-list img {
   height: 40px;
+  padding-right: 15px;
 }
 .info-list p {
   margin: 1em;
   font-family: "B612", sans-serif;
   font-size: 1em;
 }
+.btn:hover{
+  color: #595c5f;
+  background-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-btn-hover-border-color);
+}
+.btn{
+  color: #ffffff;
+  background-color: #567cbb;
+  border-color: #567cbc;
+}
+@media (min-width: 1200px){
+  h3 {
+  font-size: 1.75rem;
+  font-family: 'Hachi Maru Pop', cursive;
+  color: #567cbc;
+  }
+  h1{
+    font-family: 'Hachi Maru Pop', cursive;
+    color: #567cbc;
+  }
+  h2{
+    font-family: 'Hachi Maru Pop', cursive;
+    color: #567cbc;
+  }
+  }

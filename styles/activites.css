@@ -4,11 +4,14 @@ main {
 }
 
 .intro-container {
-  padding: 2em;
   color: #567cbc;
+  background: #c9d9f3;
+  padding: 2em 4em 2em;
 }
 .intro-container h1 {
-  font-size: 4em;
+  font-family: "Hachi Maru Pop", cursive;
+  font-size: 48px;
+  padding-bottom: 21px;
 }
 .intro-container p {
   font-family: "B612", sans-serif;
@@ -20,30 +23,25 @@ main {
 .prestations {
   display: flex;
   flex-direction: column;
-  padding: 1.5em;
   height: 55em;
   background: #567cbc;
+  padding: 2em 4em 2em;
 }
 .prestation-item {
-  margin: 1.5em;
   height: 12em;
-  width: 70vw;
   min-width: 1150px;
-  margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   color: #c9d9f3;
 }
-.item-placement {
-  width: 45em;
-}
 .item-placement > img {
-  height: 10em;
+  height: 7em;
 }
 .item-placement > h2 {
   font-size: 3em;
   text-align: start;
+  color: #c9d9f3;
+  margin-left: 38px;
 }
 ul {
   display: flex;
@@ -79,9 +77,9 @@ li {
   justify-content: space-around;
   background: #567cbc;
   border-radius: 10px;
-  width: 15%;
+  width: 29%;
   min-width: 270px;
-  height: 90%;
+  height: 98%;
   padding: 1.5em;
 }
 .ulm-cards > img {
@@ -91,7 +89,7 @@ li {
   border-radius: 10px;
 }
 img#bis {
-  width: 150px;
+  width: 297px;
 }
 .ulm-cards h3 {
   color: #c9d9f3;
@@ -111,5 +109,5 @@ img#bis {
   justify-content: space-between;
 }
 .cards-price p {
-  font-size: 1.4em;
+  font-size: 3.0em;
 }

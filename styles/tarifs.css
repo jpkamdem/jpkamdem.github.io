@@ -1,10 +1,14 @@
 #tarifs-section {
-  height: 70vh;
+  height: auto;
   background: #567cbc;
-  padding: 4em;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-bottom: 4em;
 }
 #gros-titre {
-  padding: 2em;
+  padding-left: 0em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 #gros-titre h1 {
   font-size: 4em;
@@ -19,10 +23,6 @@ table {
   margin: 3em 0;
   font-family: "B612", sans-serif;
 }
-.table-striped {
-  text-align: center;
-}
-
 /* test */
 .test {
   display: flex;

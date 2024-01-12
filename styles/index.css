@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: 'Hachi Maru Pop', cursive;
   cursor: pointer;
+  overflow:hidden;
 }
 #video-container {
   position: fixed;
@@ -138,5 +139,11 @@ h3 {
 font-size: 1.75rem;
 font-family: 'Hachi Maru Pop', cursive;
 color: white;
+}
+h1{
+  font-family: 'Hachi Maru Pop', cursive;
+}
+h2{
+  font-family: 'Hachi Maru Pop', cursive;
 }
 }
