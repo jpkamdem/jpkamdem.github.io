@@ -18,7 +18,7 @@ nav {
   font-size: 11px;
 }
 .container-1 {
-  padding: 6em 4em 4em;
+  padding: 0 4em 4em;
   color: #b7cff6;
 }
 .container-1 h1 {
@@ -73,11 +73,30 @@ img[alt="mascotte"] {
 }
 .container-3 {
   padding: 2em;
+  height: 30%;
   color: #b7cff6;
-  height: 250px;
-  background: #567cbc;
 }
-.container-3 h1 {
+.container-3 p {
+  color: #b7cff6;
+}
+
+.photos {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+.photo-item {
+  height: 240px;
+  width: 240px;
+  margin: 0 2em 0;
+  padding: 0 0 2em;
+}
+.photo-item img {
+  height: 100%;
+  border-radius: 10px;
+}
+/* .container-3 h1 {
   font-size: 48px;
 }
 .carousel-item {
@@ -87,3 +106,4 @@ img[alt="mascotte"] {
   display: flex;
   justify-content: space-around;
 }
+ */
