@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+// Vérifier si la session utilisateur est définie
+if (!isset($_SESSION['utilisateur']) and !isset($_POST['email'])) {
+    header("Location: connexion.php");
+    exit();
+}
+
+// Vérifier le rôle de l'utilisateur
+$roleUtilisateur = $_SESSION['utilisateur']['role'];
+
+// Si l'utilisateur n'est ni admin ni adhérent, le rediriger
+if ($roleUtilisateur !== 'client' && $roleUtilisateur !== 'adhérent') {
+    header("connexion.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,7 +41,7 @@
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
 </link>
     <link rel="icon" href="assets/logo.png" type="image/x-icon">
-    <title>Récapitulaif des données</title>
+    <title>Formulaire de réservations</title>
 
 </head>
 <body>
@@ -41,15 +59,6 @@
         </script>
     
         <noscript>Free cookie consent management tool by <a href="https://www.termsfeed.com/">TermsFeed</a></noscript>
-        <!-- End Cookie Consent by TermsFeed https://www.TermsFeed.com -->
-    
-    
-    
-    
-    
-        <!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
-    
-    
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <nav class="navbar bg-body-tertiary">
@@ -89,15 +98,37 @@
                 </div>
             </div>
         </nav>
-        <div id="cookie-btn">
+        <section style="padding-bottom: 12em ">
+    <div class="txt">
+        <p id="title">Réservation</p>
+        <p id="subtitle">Vous êtes actuellement connecté sous l'email :<?php echo isset($_GET['email']) ? $_GET['email'] : ''; ?></p>
+    </div>
+    <div class="container mt-6" style="margin-top:7em;">
+        <div class="col-md-6 mx-auto">
+        <form method="post" action="">
+        <div class="form-group" style="padding-bottom: 2em ">
+                    <label class="labelimp" for="typeAppareil">Type Appareil d'UML:</label>
+                    <select class="form-control" name="typeAppareil" id="typeAppareil">
+                        <option>Autogires</option>
+                        <option>Multiaxes</option>
+                        <option>Pendulaires</option>
+                    </select>
+                </div>
+                <div class="form-group" style="padding-bottom: 2em ">
+                    <label for="dateDebut">Date de réservation:</label>
+                    <input type="date" name="datedébut"class="form-control" id="datedébut">
+                </div>
+        <button type="submit" class="btn btn-primary" style="background-color:#C9D9F3;color: #567cbc;border-color: #C9D9F3;margin-top: 1em;">Réserver</button>
+        </form>
+    </div>
+</div>
+<div id="cookie-btn">
     <a href="#" id="open_preferences_center">
         <img src="assets/cookie.png" alt="">
     </a>
 </div>
-<div class="container mt-6">
-    <div class="col-md-6 mx-auto">
-    <?php
-
+</section>
+<?php
 class Database
 {
     private $host = "localhost";
@@ -120,114 +151,72 @@ class Database
         }
     }
 
-    public function enregistrerAdherent($civilite, $nom, $prenom, $datenaissance, $adresse, $codePostal, $ville, $situfamiliale, $datesitufamiliale, $email, $tel, $enfantsmineurs, $enfantsmajeurs, $parentsCharge, $causeduhandicap, $mdp, $activitesString)
-{
-    // Utilisez password_hash pour hacher le mot de passe avant de l'insérer dans la base de données
-    $mdpHache = password_hash($mdp, PASSWORD_BCRYPT);
+    public function enregistrerReservation($adherentID, $piloteID, $avionID, $dateVol)
+    {
+        $requete = $this->connexion->prepare("INSERT INTO `reservations` (AdherentID, PiloteID, AvionID, DateVol) VALUES (?, ?, ?, ?)");
 
-    $requete = $this->connexion->prepare("INSERT INTO `pili,robert,kamdem,temmar - adhérent` (Civilité, Nom, Prénom, Datenaissance, Adresse, Codepostale, Ville, Situationfamiliale, Datedébut, Email, Telephone, Nbchargesenfantsmin, Nbchargesenfantsmaj, Nbchargesparents, Causehandicap, mdp, Activitésdemandées) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        if ($requete === false) {
+            die("Erreur préparation de la requête : " . $this->connexion->error);
+        }
 
-    if ($requete === false) {
-        die("Erreur préparation de la requête : " . $this->connexion->error);
+        $requete->bind_param("iiis", $adherentID, $piloteID, $avionID, $dateVol);
+
+        if (!$requete->execute()) {
+            $erreur = $this->connexion->error;
+            $erreurInfo = $requete->errorInfo();
+            die("Erreur lors de l'exécution de la requête : " . $erreur . " | " . implode(", ", $erreurInfo));
+        }
+
+        $requete->close();
+
+        // Récupérer le dernier ID inséré
+        $reservationID = $this->connexion->insert_id;
+
+        return $reservationID;
     }
-
-    $requete->bind_param("sssssssssssssssss", $civilite, $nom, $prenom, $datenaissance, $adresse, $codePostal, $ville, $situfamiliale, $datesitufamiliale, $email, $tel, $enfantsmineurs, $enfantsmajeurs, $parentsCharge, $causeduhandicap, $mdpHache, $activitesString);
-
-    if (!$requete->execute()) {
-        $erreur = $this->connexion->error;
-        $erreurInfo = $requete->errorInfo(); // Ajout de cette ligne pour obtenir des informations détaillées
-        die("Erreur lors de l'exécution de la requête : " . $erreur . " | " . implode(", ", $erreurInfo));
-    }
-    
-    $requete->close();
-    
-    // Récupérer le dernier ID inséré
-    $numAdherent = $this->connexion->insert_id;
-
-    return $numAdherent;
-}
 
     public function deconnecter()
     {
         $this->connexion->close();
     }
 
-    public function afficherRecap()
-    {
-        $civilite = $_POST["civilite"];
-        $nom = $_POST["nom"];
-        $prenom = $_POST["prenom"];
-        $datenaissance = $_POST['datenaissance'];
-        $adresse = $_POST['adresse'];
-        $codePostal = $_POST['codePostal'];
-        $ville = $_POST['ville'];
-        $situfamiliale = $_POST['situfamiliale'];
-        $datesitufamiliale = $_POST['datesitufamiliale'];
-        $email = $_POST['email'];
-        $tel = $_POST['tel'];
-        $enfantsmineurs = $_POST['enfantsMineurs'];
-        $enfantsmajeurs = $_POST['enfantsMajeurs'];
-        $parentsCharge = $_POST['parentsCharge'];
-        $causeduhandicap = $_POST['causeduhandicap'];
-        $activitesArray = $_POST['activites'];
-        $activitesString = implode(", ", $activitesArray);
-        $mdp = $_POST['mdp'];
-
-        echo "<form id='recap'>";
-        echo "<p id='title' style='color: #c9d9f3;'>Merci " . $prenom . ", de vous être inscrit en tant qu'adhérent !</p>";
-        echo "<p id='subtitle' style='color: #c9d9f3;'>Nous sommes ravis de vous accueillir parmi nous.<br>Voici un récapitulatif de vos informations :</p>";
-        echo "<p style='color: white' class='labelimp'>Civilité : " . $civilite . "</p>";
-        echo "<p style='color: white' class='labelimp'>Nom : " . $nom . "</p>";
-        echo "<p style='color: white' class='labelimp'>Prénom : " . $prenom . "</p>";
-        echo "<p style='color: white' class='labelimp'>Date de naissance : " . $datenaissance . "</p>";
-        echo "<p style='color: white' class='labelimp'>Adresse : " . $adresse . "</p>";
-        echo "<p style='color: white' class='labelimp'>Code Postal : " . $codePostal . "</p>";
-        echo "<p style='color: white' class='labelimp'>Ville : " . $ville . "</p>";
-        echo "<p style='color: white' class='labelimp'>Situation familiale : " . $situfamiliale . "</p>";
-        echo "<p style='color: white' class='labelimp' >Date de début de situation familiale : " . $datesitufamiliale . "</p>";
-        echo "<p style='color: white' class='labelimp'>Email : " . $email . "</p>";
-        echo "<p style='color: white' class='labelimp'>Téléphone portable : " . $tel . "</p>";
-        echo "<p style='color: white' class='labelimp'>Nombre d'enfants mineurs : " . $enfantsmineurs . "</p>";
-        echo "<p  style='color: white'class='labelimp'>Nombre d'enfants majeurs : " . $enfantsmajeurs . "</p>";
-        echo "<p style='color: white' class='labelimp'>Nombre de parents à charge : " . $parentsCharge . "</p>";
-        echo "<p style='color: white'class='labelimp'>Cause du handicap : " . $causeduhandicap . "</p>";
-        echo "<p style='color: white'class='labelimp'>Activités demandées: " . $activitesString . "</p>";
-    }
+    // Ajoutez vos autres fonctions de la classe Database ici...
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $baseDeDonnees = new Database();
     $baseDeDonnees->connecter();
 
-    $email = $_POST['email'];
-    $checkDoublons = $baseDeDonnees->getConnexion()->query("SELECT COUNT(*) FROM `pili,robert,kamdem,temmar - adhérent` WHERE Email = '$email'");
-    if ($checkDoublons && $checkDoublons->fetch_row()[0] == 0) {
-        // L'adhérent n'existe pas, on peut l'enregistrer
-        $numAdherent = $baseDeDonnees->enregistrerAdherent(
-            $_POST["civilite"], $_POST["nom"], $_POST["prenom"],
-            $_POST['datenaissance'], $_POST['adresse'], $_POST['codePostal'],
-            $_POST['ville'], $_POST['situfamiliale'], $_POST['datesitufamiliale'],
-            $_POST['email'], $_POST['tel'], $_POST['enfantsMineurs'], $_POST['enfantsMajeurs'],
-            $_POST['parentsCharge'], $_POST['causeduhandicap'], $_POST['mdp'], implode(", ", $_POST['activites'])
-        );
+    // Assurez-vous que la clé 'email' existe dans $_SESSION['utilisateur']
+    if (isset($_SESSION['utilisateur'])) {
+        $email = $_SESSION['utilisateur']; // Utiliser l'email de la session pour obtenir l'AdherentID
+        echo $email;
+        // Remplacez les valeurs suivantes par celles de votre base de données
+        $piloteID = 1; // Exemple de PiloteID
+        $typeavion = $_POST['typeAppareil'];
+        $dateVol = $_POST['datedébut'];
 
-        $baseDeDonnees->afficherRecap();
-        echo "<p style='color: white' class='labelimp'>Numéro d'adhérent :" . $numAdherent . "</p>";
-        echo "</form>";
+        // Obtenez l'AdherentID en fonction de l'email
+        $result = $baseDeDonnees->getConnexion()->query("SELECT NumAdhérent FROM `pili,robert,kamdem,temmar - adhérent` WHERE Email = '$email'");
+        
+        if ($result && $row = $result->fetch_row()) {
+            $adherentID = $row[0];
+
+            // Enregistrez la réservation
+            $reservationID = $baseDeDonnees->enregistrerReservation($adherentID, $piloteID, $typeavion, $dateVol);
+
+            // Affichez le résultat ou effectuez d'autres actions nécessaires...
+            echo "Réservation enregistrée avec l'ID : " . $reservationID;
+        } else {
+            echo "Erreur lors de la récupération de l'AdherentID.";
+        }
     } else {
-        // L'adhérent existe déjà, afficher un message d'erreur par exemple
-        echo "Cet adhérent existe déjà.";
+        echo "La clé 'email' n'est pas définie dans la session utilisateur.";
     }
 
     $baseDeDonnees->deconnecter();
-} else {
-    // Rediriger vers le formulaire si le formulaire n'a pas été soumis
-    header("Location: form.html");
-    exit();
 }
-
 ?>
-
 </div>
 </div>
 <footer>
@@ -276,3 +265,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </footer>
 </body>
 </html>
+
+

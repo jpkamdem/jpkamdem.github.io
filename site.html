@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
     <link href="//fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
     <link href="//fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/global.css">
-    <link rel="stylesheet" href="/styles/navbar.css">
-    <link rel="stylesheet" href="/styles/index.css">
-    <link rel="stylesheet" href="/styles/presentation.css">
-    <link rel="stylesheet" href="/styles/activites.css">
-    <link rel="stylesheet" href="/styles/tarifs.css">
-    <link rel="stylesheet" href="/styles/form.css">
-    <link rel="stylesheet" href="/styles/footer.css">
-    <title>ACF2L</title>
+
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/presentation.css">
+    <link rel="stylesheet" href="styles/activites.css">
+    <link rel="stylesheet" href="styles/tarifs.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+    <title>ACF2L, l'association de l'air</title>
 </head>
 
 <body>
-
+<style>
+    body{
+        cursor:auto;
+        }
+</style>
     <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"
         charset="UTF-8"></script>
     <script type="text/javascript" charset="UTF-8">
@@ -47,8 +52,8 @@
         <div class="container-fluid">
             <nav class="navbar bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="/assets/logo.png" alt="Logo" width="42" height="34"
+                    <a class="navbar-brand" href="site.html">
+                        <img src="assets/logo.png" alt="Logo" width="42" height="34"
                             class="d-inline-block align-text-top" />
                     </a>
                 </div>
@@ -57,7 +62,7 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: space-between;">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a href="#" class="nav-link">Qui sommes-nous</a>
@@ -68,51 +73,57 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#gros-titre">Tarifs</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="form.html">Formulaire</a>
-                    </li>
                 </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         Identification
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="connexion.php">Connexion</a></li>
+                          <li><a class="dropdown-item" href="form.html">Inscription</a></li>
+                      </li>
+                    </ul>
             </div>
         </div>
     </nav>
-
-
     <section class="main-content">
         <div class="container-1">
             <h1>Qui sommes-nous ?</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ab neque aperiam culpa rem eaque
-                voluptas asperiores ipsa. Ipsam nulla inventore, quas consequatur incidunt minima facere laborum
-                exercitationem ipsum eum assumenda quia libero animi aut autem aliquam. Officiis a odio optio pariatur
-                perferendis. Voluptates molestiae, totam provident blanditiis non ad, recusandae eum nihil temporibus
-                quos accusamus quaerat voluptate deleniti delectus facilis laudantium nam cum, officia impedit iste
-                eaque quasi exercitationem maiores dolore! Non quis, saepe ad blanditiis consectetur culpa officia, unde
-                aliquam modi, quam eos quod ratione quidem. Explicabo, ipsum minima debitis optio ea perspiciatis
-                tenetur adipisci cumque, fuga, temporibus soluta corrupti? Temporibus porro autem rerum deleniti hic, a
-                nostrum veniam, corrupti excepturi praesentium neque fugiat consequatur, quis ex laborum? Soluta optio
-                quisquam repellendus. Vel voluptatibus culpa magnam, at enim accusamus a laborum sint similique vero
-                libero illum blanditiis velit deleniti, in, odit est ipsam. Sint repellendus illo perferendis animi
-                conse</p>
-            <img src="/assets/mascotte.png" alt="mascotte">
+            <p>L'Aéro-club est bien plus qu'une simple entité, c'est une Association Loi 1901 qui porte fièrement
+                l'agrément de Jeunesse et Sports et qui est affiliée à la FFULM (Fédération Française d’ULM). 
+                Enregistrée sous le numéro 04674 et agréée sous le numéro AS70986858, notre association s'engage
+                à promouvoir et à encourager les activités liées à l'aviation légère. Notre siège social, situé
+                au 62, Avenue de la République, 70200 Lure, incarne notre attachement à la communauté locale et
+                à l'aviation sportive. Fondée sur les principes de la Loi 1901, notre association s'efforce de
+                fournir un environnement dynamique et inclusif pour tous les passionnés d'aviation, offrant un
+                lieu où l'apprentissage, le partage d'expériences et la camaraderie aérienne se rencontrent</p>
+            <img src="assets/mascotte.png" alt="mascotte">
         </div>
 
         <div class="container-2">
             <h2>Notre équipe</h2>
             <div class="equipe-layout">
                 <div class="equipe-item">
-                    <div class="img-placeholder"></div>
-                    <p>Lorem, ipsum.</p>
+                    <img src="assets/photo_pilote.jpg" alt="" style="border-radius: 32px;padding-bottom: 14px;">
+                    <p>Kevin SAITOUT</p>
+                    <p style="padding: 2px ">Chef pilote</p>
                 </div>
                 <div class="equipe-item">
-                    <div class="img-placeholder"></div>
-                    <p>Lorem, ipsum.</p>
+                    <img src="assets/secrétaire.jpg" alt="" style="border-radius: 32px;padding-bottom: 14px;">
+                    <p>Celine LAPLUME</p>
+                    <p style="padding: 2px ">Secrétaire</p>
                 </div>
                 <div class="equipe-item">
-                    <div class="img-placeholder"></div>
-                    <p>Lorem, ipsum.</p>
+                    <img src="assets/instructrice.jpeg" alt="" style="border-radius: 32px;padding-bottom: 14px;height: 20em;">
+                    <p>Justine VOLAVU</p>
+                    <p style="padding: 2px ">Pilote ULM - instructrice</p>
                 </div>
                 <div class="equipe-item">
-                    <div class="img-placeholder"></div>
-                    <p>Lorem, ipsum.</p>
+                    <img src="assets/instructeur.jpg" alt="" style="border-radius: 32px;padding-bottom: 14px;height: 20em; ">
+                    <p>Alain STRUMENT</p>
+                    <p style="padding: 2px ">Pilote ULM - instructeur
+                    </p>
                 </div>
             </div>
         </div>
@@ -121,22 +132,8 @@
         <a href="#" id="open_preferences_center">
             <img src="assets/cookie.png" alt="">
         </a>
-        <!-- Update cookies preferences -->
-
     </div>
-
-        <div class="container-3">
-            <h1>Quelques photos</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsa quaerat numquam.</p>
-        <article class="photos">
-            <div class="photo-item"><img src="assets/course-1.jpg" alt=""></div>
-            <div class="photo-item"><img src="assets/course-2.jpg" alt=""></div>
-            <div class="photo-item"><img src="assets/course-3.jpg" alt=""></div>
-        </article>    
-        </div>
-
     </section>
-
     <main>
 
         <div class="intro-container" id="nos-activites">
@@ -148,7 +145,7 @@
         <div class="prestations">
             <div class="prestation-item">
                 <div class="item-placement">
-                    <img src="/assets/cle.png" alt="">
+                    <img src="assets/cle.png" alt="">
                 </div>
                 <div class="item-placement">
                     <h2>Montage & maintenance</h2>
@@ -163,12 +160,12 @@
             </div>
             <div class="prestation-item">
                 <div class="item-placement">
-                    <img src="/assets/fork.png" alt="">
+                    <img src="assets/fork.png" alt="">
                 </div>
                 <div class="item-placement">
                     <h2>Service restauration</h2>
                 </div>
-                <div class="item-placement">
+                <div class="item-placement" style="margin-left: 5%">
                     <ul>
                         <li>Service de restauration rapide</li>
                     </ul>
@@ -176,12 +173,12 @@
             </div>
             <div class="prestation-item">
                 <div class="item-placement">
-                    <img src="/assets/hebergement.png" alt="">
+                    <img src="assets/hebergement.png" alt="">
                 </div>
                 <div class="item-placement">
                     <h2>Hébergement</h2>
                 </div>
-                <div class="item-placement">
+                <div class="item-placement" style="margin-left: 23%">
                     <ul>
                         <li>Trois studios</li>
                         <li>Six chambres</li>
@@ -190,12 +187,12 @@
             </div>
             <div class="prestation-item">
                 <div class="item-placement">
-                    <img src="/assets/location.png" alt="">
+                    <img src="assets/location.png" alt="">
                 </div>
                 <div class="item-placement">
                     <h2>Location</h2>
                 </div>
-                <div class="item-placement">
+                <div class="item-placement" style="margin-left: 32%">
                     <ul>
                         <li>Location d'emplacement ULM dans des hangars pour les particuliers</li>
                     </ul>
@@ -209,36 +206,44 @@
         <h1>Catégorie d'ULM</h1>
         <div class="card-layout">
             <div class="ulm-cards">
-                <img src="/assets/course-1.jpg" alt="">
-                <h3>Aréonefs à voiture fixe</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quibusdam itaque. Perspiciatis, rem.
-                    Sed blanditiis velit maiores eius </p>
+                <img src="assets/autogire.jpg" alt="">
+                <h3>Autogires</h3>
+                <p>Découvrez une nouvelle dimension du vol avec nos autogires, fusion parfaite entre élégance
+                     et performance, offrant une expérience aérienne inégalée.</p>
                 <div class="cards-price">
-                    <button type="button " class="btn btn-outline-light">Apply now</button>
+                    <a href="reservationclient.php">
+                    <button type="button" class="btn btn-outline-light" style="width: 91%;
+                    margin-right: 11%; background-color: #b7cff6;border-color: #b7cff6;color: #567cbc;">Réserver</button>
+                    </a>
                     <p>$79.00</p>
                 </div>
             </div>
             <div class="ulm-cards">
-                <img src="/assets/course-2.jpg" alt="" id="bis">
-                <h3>Aréonefs à voiture fixe</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quibusdam itaque. Perspiciatis, rem.
-                    Sed blanditiis velit maiores eius </p>
+                <img src="assets/multiaxes.jpg" alt="" id="bis">
+                <h3>Multiaxe</h3>
+                <p>Vivez l'excitation du vol dynamique à bord de nos multiaxes, où la puissance et la maniabilité
+                    se conjuguent pour vous offrir une aventure aérienne exceptionnelle.</p>
                 <div class="cards-price">
-                    <button type="button " class="btn btn-outline-light">Apply now</button>
+                    <a href="reservationclient.php">
+                    <button type="button " class="btn btn-outline-light"style="width: 91%;
+                    margin-right: 11%; background-color: #b7cff6;border-color: #b7cff6;color: #567cbc;">Réserver</button>
+                    </a>
                     <p>$229.00</p>
                 </div>
 
             </div>
             <div class="ulm-cards">
-                <img src="/assets/course-3.jpg" alt="">
-                <h3>Aréonefs à voiture fixe</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quibusdam itaque. Perspiciatis, rem.
-                    Sed blanditiis velit maiores eius </p>
+                <img src="assets/pendulaire.jpg" alt="">
+                <h3>Pendulaires</h3>
+                <p>Envolez-vous avec grâce et légèreté à bord de nos ULM pendulaires, où chaque vol devient 
+                    une danse harmonieuse avec les vents du ciel."</p>
                 <div class="cards-price">
-                    <button type="button " class="btn btn-outline-light">Apply now</button>
+                    <a href="reservationclient.php">
+                    <button type="button " class="btn btn-outline-light"style="width: 91%;
+                    margin-right: 11%; background-color: #b7cff6;border-color: #b7cff6;color: #567cbc;">Réserver</button>
+                    </a>
                     <p>$129.00</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -248,7 +253,7 @@
             <div id="gros-titre">
                 <h1>Nos tarifs</h1>
             </div>
-            <h3 id="prompt">Les tarifs ACF2L dépendent de la formule que vous chosissez :</h3>
+            <h3 id="prompt">Les tarifs ACF2L dépendent de la formule que vous choisissez :</h3>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -312,69 +317,47 @@
 
         <footer>
             <div class="foot-item">
-                <h3>Information</h3>
                 <div class="info-list">
-                    <img src="/assets/email.png" alt="">
+                    <h1>Information</h1>
+                </div>
+                <div class="info-list" style="padding-bottom: 0;
+                padding-top: 0;">
+                    <img src="assets/email.png" alt="">
                     <p>acf2l@gmail.com</p>
                 </div>
-                <div class="info-list">
-                    <img src="/assets/phone-call.png" alt="">
+                <div class="info-list" style="padding-bottom: 0;
+                padding-top: 0;">
+                    <img src="assets/phone-call.png" alt="">
                     <p>+33 01 60 56 60 60</p>
                 </div>
-                <div class="info-list">
-                    <img src="/assets/maps-and-flags.png" alt="">
+                <div class="info-list" style="padding-bottom: 0;
+                padding-top: 0;">
+                    <img src="assets/maps-and-flags.png" alt="">
                     <p>62, Avenue de la République, 70200 Lure</p>
                 </div>
-                <div class="logo-container">
-                    <img src="/assets/instagram.png" alt="">
-                    <img src="/assets/twitter.png" alt="">
-                    <img src="/assets/youtube.png" alt="">
+                <div class="info-list">
+                    <img src="assets/instagram.png" alt="">
+                    <img src="assets/twitter.png" alt="">
+                    <img src="assets/youtube.png" alt="">
                 </div>
 
             </div>
             <div class="foot-item">
-                <h3>Contactez-nous</h3>
+                <div class="info-list" style="padding-left: 0;">
+                    <h1>Contactez-nous</h1>
+                </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label"></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email"><br>
-                    <input class="form-control" type="text" placeholder="Sujet" aria-label="default input example"><br>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" width="98%"><br>
+                    <input class="form-control" type="text" placeholder="Sujet" aria-label="default input example" width="98%"><br>
                     <input class="form-control" type="text" placeholder="Description"
-                        aria-label="default input example">
+                        aria-label="default input example" width="98%">
+                        <br>
+                        <div class="cards-price">
+                            <button type="button " class="btn btn-outline-light">Soumettre</button>
+                        </div>
                 </div>
             </div>
         </footer>
-
-        
 </body>
-
-<script>
-    // Remplir la liste déroulante avec une liste de codes postaux (vous pouvez ajuster cela en fonction de vos besoins)
-    async function fillCodePostaux() {
-        var codePostalElement = document.getElementById("codePostal");
-        var codesPostauxListElement = document.getElementById("codesPostauxList");
-
-        try {
-            const response = await fetch("https://api-adresse.data.gouv.fr/search/?q=france&limit=100");
-            const data = await response.json();
-
-            // Extraire les codes postaux des résultats de l'API
-            const codesPostaux = data.features.map(feature => feature.properties.postcode);
-
-            // Remplir la liste déroulante avec les codes postaux
-            codesPostaux.forEach(codePostal => {
-                var option = document.createElement("option");
-                option.value = codePostal;
-                codesPostauxListElement.appendChild(option);
-            });
-        } catch (error) {
-            console.error("Erreur lors de la récupération des codes postaux :", error);
-        }
-    }
-
-    // Appeler la fonction pour remplir la liste déroulante au chargement de la page
-    fillCodePostaux();
-
-</script>
-
-
 </html>

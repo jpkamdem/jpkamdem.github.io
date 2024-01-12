@@ -2,163 +2,272 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link href="//fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link href="//fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/form.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/presentation.css">
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+</link>
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
     <title>Formulaire pour les adhérents</title>
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="assets/logo.png" alt="Logo" width="42" height="34"
-                            class="d-inline-block align-text-top" />
-                    </a>
+    <style>
+        body{
+            cursor:auto;
+            }
+    </style>
+        <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"
+            charset="UTF-8"></script>
+        <script type="text/javascript" charset="UTF-8">
+            document.addEventListener('DOMContentLoaded', function () {
+                cookieconsent.run({ "notice_banner_type": "standalone", "consent_type": "express", "palette": "light", "language": "fr", "page_load_consent_levels": ["strictly-necessary"], "notice_banner_reject_button_hide": false, "preferences_center_close_button_hide": false, "page_refresh_confirmation_buttons": false, "website_name": "AC2FL" });
+            });
+        </script>
+    
+        <noscript>Free cookie consent management tool by <a href="https://www.termsfeed.com/">TermsFeed</a></noscript>
+        <!-- End Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+    
+    
+    
+    
+    
+        <!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
+    
+    
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="site.html">
+                            <img src="assets/logo.png" alt="Logo" width="42" height="34"
+                                class="d-inline-block align-text-top" />
+                        </a>
+                    </div>
+                </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: space-between;">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Qui sommes-nous</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#nos-activites">Nos activités</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#gros-titre">Tarifs</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Identification
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="connexion.php">Connexion</a></li>
+                              <li><a class="dropdown-item" href="form.html">Inscription</a></li>
+                          </li>
+                        </ul>
                 </div>
-            </nav>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Qui sommes-nous</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nos activités</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tarifs</a>
-                    </li>
-
-                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    <section>
     <div class="txt">
-    <p id="title">Formulaire</p>
-    <p id="subtitle">Veuillez remplir ce formulaire pour votre inscription en tant qu’adhérent:</p>
+        <p id="title">Formulaire</p>
+        <p id="subtitle">Veuillez remplir ce formulaire pour votre inscription en tant qu’adhérent:</p>
     </div>
-<div class="container mt-6">
-    <div class="col-md-6 mx-auto">
-    <form method="post">
-        <div class="form-group" style="display: flex;justify-content: space-between;align-items: baseline;">
-            <label class="labelimp">Civilité :</label>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" id="civiliteM" name="civilite" value="M">
-                <label class="form-check-label" for="civiliteM">Monsieur</label>
+    <div class="container mt-6" style="margin-top:7em;">
+        <div class="col-md-6 mx-auto">
+        <form method="post">
+            <div class="form-group" style="display: flex;justify-content: space-between;align-items: baseline;">
+                <label class="labelimp">Civilité :</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="civiliteM" name="civilite" value="M">
+                    <label class="form-check-label" for="civiliteM">Monsieur</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="civiliteMme" name="civilite" value="Mme">
+                    <label class="form-check-label" for="civiliteMme">Madame</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="civilitenonspecifique" name="civilite" value="NonSpé">
+                    <label class="form-check-label" for="civilitenonspecifique">Non spécifique</label>
+                </div>
             </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" id="civiliteMme" name="civilite" value="Mme">
-                <label class="form-check-label" for="civiliteMme">Madame</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" id="civilitenonspecifique" name="civilite" value="NonSpé">
-                <label class="form-check-label" for="civilitenonspecifique">Non spécifique</label>
-            </div>
-        </div>
-        <div style="display:flex;justify-content: space-between;">
-            <div class="form-group">
-                <label class="labelimp" for="nom">Nom *:</label>
-                <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom">
-                <div id="nomError" class="error-message"></div>
-            </div>
-            <div class="form-group">
-                <label class="labelimp" for="prenom">Prénom *:</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez votre prénom">
-                <div id="nomError2" class="error-message"></div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="labelimp" for="dateNaissance">Date de naissance :</label>
-            <input type="date" class="form-control" name="datenaissance" id="dateNaissance">
-        </div>
-        <div class="form-group">
-            <label class="labelimp"for="adresse">Adresse :</label>
-            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Numéro et rue">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="codePostal">Code Postal :</label>
-                <input type="text" class="form-control" id="codePostal" name="codePostal" list="codesPostauxList">
-                <!-- Liste déroulante avec les codes postaux pré-remplis -->
-                <datalist id="codesPostauxList"></datalist>
-            </div>
-            <div class="form-group col-md-8">
-                <label for="ville">Ville :</label>
-                <input type="text" class="form-control" id="ville" name="ville">
-            </div>
-        </div>
-            <div class="form-group">
-                <label class="labelimp" for="situationFamiliale">Situation familiale :</label>
-                <select class="form-control" name="situfamiliale" id="situationFamiliale">
-                    <option>Célibataire</option>
-                    <option>Marié</option>
-                    <option>Union Libre</option>
-                    <option>PACS</option>
-                    <option>Divorcé</option>
-                </select>
+            <div style="display:flex;justify-content: space-between;">
+                <div class="form-group">
+                    <label class="labelimp" for="nom">Nom *:</label>
+                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom">
+                    <div id="nomError" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label class="labelimp" for="prenom">Prénom *:</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez votre prénom">
+                    <div id="nomError2" class="error-message"></div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="dateDebutFin">Date de début de situation familiale :</label>
-                <input type="date" name="datesitufamiliale"class="form-control" id="dateDebutFin">
-            </div>
-        <div style="display:flex;justify-content: space-between;">
-            <div class="form-group">
-                <label class="labelimp" for="email">Email *:</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Entrez votre adresse email">
-                <div id="nomError3" class="error-message"></div>
+                <label class="labelimp" for="dateNaissance">Date de naissance :</label>
+                <input type="date" class="form-control" name="datenaissance" id="dateNaissance">
             </div>
             <div class="form-group">
-                <label class="labelimp" for="telephone">Téléphone portable :</label>
-                <input type="tel"  name="tel"class="form-control" id="telephone" placeholder="Entrez votre numéro de téléphone">
-                <div id="nomError4" class="error-message"></div>
+                <label class="labelimp"for="adresse">Adresse :</label>
+                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Numéro et rue">
             </div>
-        </div>
+            <div class="form-row" style="display:flex;">
+                <div class="form-group col-md-4" style="margin-right: 23px;">
+                    <label for="codePostal">Code Postal :</label>
+                    <input type="text" class="form-control" id="codePostal" name="codePostal" list="codesPostauxList">
+                    <!-- Liste déroulante avec les codes postaux pré-remplis -->
+                    <datalist id="codesPostauxList"></datalist>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="ville">Ville :</label>
+                    <input type="text" class="form-control" id="ville" name="ville" style="width:94%">
+                </div>
+            </div>
+                <div class="form-group">
+                    <label class="labelimp" for="situationFamiliale">Situation familiale :</label>
+                    <select class="form-control" name="situfamiliale" id="situationFamiliale">
+                        <option>Célibataire</option>
+                        <option>Marié</option>
+                        <option>Union Libre</option>
+                        <option>PACS</option>
+                        <option>Divorcé</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dateDebutFin">Date de début de situation familiale :</label>
+                    <input type="date" name="datesitufamiliale"class="form-control" id="dateDebutFin">
+                </div>
+            <div style="display:flex;justify-content: space-between;">
+                <div class="form-group">
+                    <label class="labelimp" for="email">Email *:</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Entrez votre adresse email">
+                    <div id="nomError3" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label class="labelimp" for="telephone">Téléphone portable :</label>
+                    <input type="tel"  name="tel"class="form-control" id="telephone" placeholder="Entrez votre numéro de téléphone">
+                    <div id="nomError4" class="error-message"></div>
+                </div>
+            </div>
             <div class="form-group">
-                <label class="labelimp" for="personnesACharge">Nombre de personnes à charge :</label>
-                <div style="display:flex;justify-content: space-between;">
-                    <div style="margin-right: 18px;">
-                        <label>Enfants mineurs :</label>
-                        <input type="number" class="form-control" id="enfantsMineurs" name="enfantsMineurs"min="0">
+                <label class="labelimp" for="telephone">Mot de passe:</label>
+                <div class="input-group">
+                    <input type="password" name="mdp" class="form-control" id="mdp" placeholder="Entrez votre mot de passe">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </button>
                     </div>
-                    <div style="margin-right: 18px;">
-                        <label>Enfants majeurs :</label>
-                        <input type="number" class="form-control" id="enfantsMajeurs" name="enfantsMajeurs"min="0">
-                    </div>
-                    <div style="margin-right: 18px;">
-                        <label>Parents à charge</label>
-                        <input type="number" class="form-control" id="parentsCharge" name="parentsCharge" min="0">
-                    </div>
+                </div>
             </div>
-            <div>
-                <label class="labelimp" >Cause du handicap</label>
-                <textarea  class="form-control" id="causeduhandicap" name="causeduhandicap"style="height:200px"></textarea>
+                <div class="form-group">
+                    <label class="labelimp" for="personnesACharge">Nombre de personnes à charge :</label>
+                    <div style="display:flex;justify-content: space-between;">
+                        <div style="margin-right: 18px;">
+                            <label>Enfants mineurs :</label>
+                            <input type="number" class="form-control" id="enfantsMineurs" name="enfantsMineurs"min="0">
+                        </div>
+                        <div style="margin-right: 18px;">
+                            <label>Enfants majeurs :</label>
+                            <input type="number" class="form-control" id="enfantsMajeurs" name="enfantsMajeurs"min="0">
+                        </div>
+                        <div style="margin-right: 18px;">
+                            <label>Parents à charge</label>
+                            <input type="number" class="form-control" id="parentsCharge" name="parentsCharge" min="0">
+                        </div>
+                </div>
+                <div>
+                    <label class="labelimp" >Cause du handicap</label>
+                    <textarea  class="form-control" id="causeduhandicap" name="causeduhandicap"style="height:200px"></textarea>
+                </div>
             </div>
+            <div class="form-group">
+                <label>Activités susceptibles d'être demandées :</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="Cours de Pilotage" value="Cours de Pilotage" name="activites[]">
+                    <label class="form-check-label" for="Cours de Pilotage">Cours de pilotage</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="Baptême de l'air" value="Baptême de l'air" name="activites[]">
+                    <label class="form-check-label" for="Baptême de l'air">Baptême de l'air</label>
+                </div>
+                <div id="nomError5" class="error-message"></div>
+            </div>
+            <button type="button" onclick="validerFormulaire()" class="btn btn-primary" style="background-color:#C9D9F3;color: #567cbc;border-color: #C9D9F3;">Soumettre</button>
+        </form>
+    </div>
+</div>
+<div id="cookie-btn">
+    <a href="#" id="open_preferences_center">
+        <img src="assets/cookie.png" alt="">
+    </a>
+</div>
+</section>
+<footer>
+    <div class="foot-item">
+        <div class="info-list">
+            <h1>Information</h1>
         </div>
-        <div class="form-group">
-            <label>Activités susceptibles d'être demandées :</label>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="Cours de Pilotage" value="Cours de Pilotage" name="activites[]">
-                <label class="form-check-label" for="Cours de Pilotage">Cours de pilotage</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="Baptême de l'air" value="Baptême de l'air" name="activites[]">
-                <label class="form-check-label" for="Baptême de l'air">Baptême de l'air</label>
-            </div>
+        <div class="info-list" style="padding-bottom: 0;
+        padding-top: 0;">
+            <img src="assets/email.png" alt="">
+            <p>acf2l@gmail.com</p>
+        </div>
+        <div class="info-list" style="padding-bottom: 0;
+        padding-top: 0;">
+            <img src="assets/phone-call.png" alt="">
+            <p>+33 01 60 56 60 60</p>
+        </div>
+        <div class="info-list" style="padding-bottom: 0;
+        padding-top: 0;">
+            <img src="assets/maps-and-flags.png" alt="">
+            <p>62, Avenue de la République, 70200 Lure</p>
+        </div>
+        <div class="info-list">
+            <img src="assets/instagram.png" alt="">
+            <img src="assets/twitter.png" alt="">
+            <img src="assets/youtube.png" alt="">
+        </div>
 
+    </div>
+    <div class="foot-item">
+        <div class="info-list" style="padding-left: 0;">
+            <h1>Contactez-nous</h1>
         </div>
-        <button type="button" onclick="validerFormulaire()" class="btn btn-primary" style="background-color:#C9D9F3;color: #567cbc;border-color: #C9D9F3;">Soumettre</button>
-    </form>
-</div>
-</div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"></label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" width="98%"><br>
+            <input class="form-control" type="text" placeholder="Sujet" aria-label="default input example" width="98%"><br>
+            <input class="form-control" type="text" placeholder="Description"
+                aria-label="default input example" width="98%">
+                <br>
+                <div class="cards-price">
+                    <button type="button " class="btn btn-outline-light">Soumettre</button>
+                </div>
+        </div>
+    </div>
+</footer>
 </body>
 <script>
 function validerFormulaire() {
@@ -180,42 +289,44 @@ function validerFormulaire() {
     if (nom === '') {
         var nomError = document.getElementById('nomError');
         nomError.textContent = '* Veuillez saisir votre nom';
-        nomError.style.color = "#C9D9F3";
+        nomError.style.color = "rgb(255 165 165)";
         erreurs = true;
     }
 
     if (prenom === '') {
         var nomError2 = document.getElementById('nomError2');
         nomError2.textContent = '* Veuillez saisir votre prénom';
-        nomError2.style.color = "#C9D9F3";
+        nomError2.style.color = "rgb(255 165 165)";
         erreurs = true;
     }
 
     if (email === '') {
         var nomError3 = document.getElementById('nomError3');
         nomError3.textContent = '* Veuillez saisir votre email';
-        nomError3.style.color = "#C9D9F3";
+        nomError3.style.color = "rgb(255 165 165)";
         erreurs = true;
     } else if (!isValidEmail(email)) {
         var nomError3 = document.getElementById('nomError3');
         nomError3.textContent = '* Veuillez saisir une adresse email valide';
-        nomError3.style.color = "#C9D9F3";
+        nomError3.style.color = "rgb(255 165 165)";
         erreurs = true;
     }
     if (tel === '' && !isValidPhoneNumber(tel)) {
         var nomError4 = document.getElementById('nomError4');
         nomError4.textContent = '* Veuillez saisir un numéro de portable valide (10 chiffres)';
-        nomError4.style.color = "#C9D9F3";
+        nomError4.style.color = "rgb(255 165 165)";
         erreurs = true;
     }
 
-    if (activites.length === 0) {
-        document.getElementById('activitesError').textContent = '* Veuillez sélectionner au moins une activité';
+    if (activites === '') {
+        var nomError5 = document.getElementById('nomError5');
+        monError5.textContent = '* Veuillez sélectionner au moins une activité';
+        monError5.style.color = "rgb(255 165 165)";
         erreurs = true;
     }
 
     if (!erreurs) {
-        document.querySelector('form').action = 'recap.php'; // Changer l'action du formulaire
+        document.querySelector('form').action = 'recap.php';
         document.querySelector('form').submit();
     }
 }
@@ -229,7 +340,45 @@ function isValidPhoneNumber(tel) {
     var regex = /^[0-9]{10}$/;
     return regex.test(tel);
 }
+</script>
+<script>
+    // Remplir la liste déroulante avec une liste de codes postaux (vous pouvez ajuster cela en fonction de vos besoins)
+    async function fillCodePostaux() {
+        var codePostalElement = document.getElementById("codePostal");
+        var codesPostauxListElement = document.getElementById("codesPostauxList");
 
+        try {
+            const response = await fetch("https://api-adresse.data.gouv.fr/search/?q=france&limit=100");
+            const data = await response.json();
 
+            // Extraire les codes postaux des résultats de l'API
+            const codesPostaux = data.features.map(feature => feature.properties.postcode);
+
+            // Remplir la liste déroulante avec les codes postaux
+            codesPostaux.forEach(codePostal => {
+                var option = document.createElement("option");
+                option.value = codePostal;
+                codesPostauxListElement.appendChild(option);
+            });
+        } catch (error) {
+            console.error("Erreur lors de la récupération des codes postaux :", error);
+        }
+    }
+
+    // Appeler la fonction pour remplir la liste déroulante au chargement de la page
+    fillCodePostaux();
+
+</script>
+<script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('mdp');
+
+    togglePassword.addEventListener('click', function () {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+
+        // Change l'icône en conséquence (œil ou œil barré)
+        this.innerHTML = type === 'password' ? '<i class="fa fa-eye" aria-hidden="true"></i>' : '<i class="fa fa-eye-slash" aria-hidden="true"></i>';
+    });
 </script>
 </html>
